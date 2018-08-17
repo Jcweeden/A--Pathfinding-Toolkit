@@ -119,7 +119,7 @@ void Grid::setObstacleNodesToUntraversable()
     }
   }
   
-  std::cout << "successfully set obstacle nodes to intraversable\n";
+  //std::cout << "successfully set obstacle nodes to intraversable\n";
 }
 
 void Grid::setTerrainNodesPenaltyCost(std::vector<GameObject*> terrain, unsigned penaltyCost)

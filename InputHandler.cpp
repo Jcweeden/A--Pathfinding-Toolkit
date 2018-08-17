@@ -163,4 +163,12 @@ void InputHandler::reset()
   m_mouseButtonStates[LEFT] = false;
   m_mouseButtonStates[MIDDLE] = false;
   m_mouseButtonStates[RIGHT] = false;
+
+  keyReturnPressed = key1Pressed = key2Pressed = key3Pressed = key4Pressed =
+      key5Pressed = key6Pressed = key7Pressed = key8Pressed = key9Pressed =
+      key0Pressed = keyGPressed = keyTPressed = keyPPressed = keySPressed =
+      keyHPressed =
+      keyRPressed = keyWPressed =
+      false;
+
 }

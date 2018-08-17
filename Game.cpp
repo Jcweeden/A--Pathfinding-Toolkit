@@ -73,7 +73,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
    env = TheEnvironment::Instance();
    env->setup(1,1,10,7,5, getWindowHeight(), getWindowWidth(), 20, 99, true);
    std::cout << "Game.init() - env->setup() complete\n";
-   
+   std::cout << "\n\n9: random spawn (single agent)\n";
    return true;
 }
 
@@ -111,9 +111,10 @@ void Game::handleEvents()
   if (TheInputHandler::Instance()->key1Pressed)
   {
     TheInputHandler::Instance()->key1Pressed = false;
+    TheInputHandler::Instance()->reset();
     env->clean();
     //1: selection of nearest target to collect
-    std::cout << "1: path to goal with obstacle avoidance\n";
+    std::cout << "\n\n1: path to goal with obstacle avoidance\n";
     env->setup(1,10,0,0,0, getWindowHeight(), getWindowWidth(), 20, 1, false);
   }
 
@@ -121,81 +122,90 @@ void Game::handleEvents()
   if (TheInputHandler::Instance()->key2Pressed)
   {
     TheInputHandler::Instance()->key2Pressed = false;
+    TheInputHandler::Instance()->reset();
     env->clean();
     //2: path to goal with obstacle avoidance
-    std::cout << "2: path to goal with obstacle avoidance\n";
+    std::cout << "\n\n2: path to goal with obstacle avoidance\n";
     env->setup(1,1,20,0,0, getWindowHeight(), getWindowWidth(), 20, 2, false);
   }
 
   if (TheInputHandler::Instance()->key3Pressed)
   {
     TheInputHandler::Instance()->key3Pressed = false;
+    TheInputHandler::Instance()->reset();
     env->clean();
     //3: dynamic obstacle avoidance
-    std::cout << "3: dynamic obstacle avoidance\n";
+    std::cout << "\n\n3: dynamic obstacle avoidance\n";
     env->setup(1,1,6,0,0, getWindowHeight(), getWindowWidth(), 20, 3, false);
   }
 
   if (TheInputHandler::Instance()->key4Pressed)
   {
     TheInputHandler::Instance()->key4Pressed = false;
+    TheInputHandler::Instance()->reset();
     env->clean();
     //4: ability to determine if a viable route exists
-    std::cout << "4: ability to determine if a viable route exists\n";
+    std::cout << "\n\n4: ability to determine if a viable route exists\n";
     env->setup(1,1,4,0,0, getWindowHeight(), getWindowWidth(), 20, 4, false);
   }
 
   if (TheInputHandler::Instance()->key5Pressed)
   {
     TheInputHandler::Instance()->key5Pressed = false;
+    TheInputHandler::Instance()->reset();
     env->clean();
     //5: resizable A* navigation grid (size 20)
-    std::cout << "5: resizable A* navigation grid (size 20) \n";
+    std::cout << "\n\n5: resizable A* navigation grid (size 20) \n";
     env->setup(1,1,11,0,0, getWindowHeight(), getWindowWidth(), 20, 5, false);
   }
 
   if (TheInputHandler::Instance()->key6Pressed)
   {
     TheInputHandler::Instance()->key6Pressed = false;
+    TheInputHandler::Instance()->reset();
     env->clean();
     //6: resizable A* navigation grid (size 30)
-    std::cout << "6: resizable A* navigation grid (size 30)\n";
+    std::cout << "\n\n6: resizable A* navigation grid (size 30)\n";
     env->setup(1,1,11,0,0, getWindowHeight(), getWindowWidth(), 30, 6, false);
   }
   
   if (TheInputHandler::Instance()->key7Pressed)
   {
     TheInputHandler::Instance()->key7Pressed = false;
+    TheInputHandler::Instance()->reset();
     env->clean();
     //7: weighted paths
-    std::cout << "7: weighted paths\n";
+    std::cout << "\n\n7: weighted paths\n";
     env->setup(1,1,0,1,2, getWindowHeight(), getWindowWidth(), 20, 7, false);
   }
 
   if (TheInputHandler::Instance()->key8Pressed)
   {
     TheInputHandler::Instance()->key8Pressed = false;
+    TheInputHandler::Instance()->reset();
     env->clean();
     //8: blurred penalty costs
-    std::cout << "8: weighted paths with blurred penalty costs\n";
+    std::cout << "\n\n8: weighted paths with blurred penalty costs\n";
     env->setup(1,1,0,1,2, getWindowHeight(), getWindowWidth(), 20, 8, true);
   }
 
   if (TheInputHandler::Instance()->key9Pressed)
   {
     TheInputHandler::Instance()->key9Pressed = false;
+    TheInputHandler::Instance()->reset();
     env->clean();
     //9: random spawn (single agent)
-    std::cout << "9: random spawn (single agent)\n";
+    std::cout << "\n\n9: random spawn (single agent)\n";
     env->setup(1,1,10,7,5, getWindowHeight(), getWindowWidth(), 20, 99, true);
   }
 
   if (TheInputHandler::Instance()->key0Pressed)
   {
     TheInputHandler::Instance()->key0Pressed = false;
+    TheInputHandler::Instance()->reset();
     env->clean();
     //0: random spawn (multiple agents)
-    std::cout << "0: random spawn (multiple agents)\n";
+    std::cout << "\n\n0: random spawn (multiple agents)\n";
     env->setup(10,40,10,7,5, getWindowHeight(), getWindowWidth(), 20, 99, true);
   }
 }
